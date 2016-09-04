@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "isolatedModules": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "removeComments": false,
+        "noImplicitAny": false,
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "filesGlob": [
+        "App/server/**/*.ts",
+        "App/client/**/*.ts",
+        "App/collections/**/*.ts",
+        "typings/**/*.ts",
+        "typings/*.ts",
+        "App/node_modules/definitely-typed-*/**/*.ts"
+    ],
+    "compileOnSave": false
+}

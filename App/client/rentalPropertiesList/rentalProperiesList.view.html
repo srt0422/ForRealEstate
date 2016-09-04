@@ -1,0 +1,32 @@
+<section>
+    <section ng-controller="rentalPropertiesList">
+        <section>
+          <a ng-link="/rentalProperty">Add a Rental</a>
+        </section>
+        <article class="fre-rental-property" ng-repeat="rentalproperty in rentalproperties">
+            <aside class="fre-rental-property fre-rental-property-thumbnail"></aside>
+            <section class="fre-rental-property fre-rental-property-info">
+                <article>
+                    <table>
+                        <tr>
+                            <th>Total Profit</th>
+                            <td>{{rentalproperty.profitAmount}}</td>
+                            <th>Total Expenses</th>
+                            <td>{{rentalproperty.expenseAmount}}</td>
+                            <th>Total Revenue</th>
+                            <td>{{rentalproperty.revenueAmount}}</td>
+                        </tr>
+                        <tr>
+                            <th>Monthly Rent</th>
+                            <td>{{rentalproperty.monthlyRentPaymentAmount}}</td>
+                            <th>Average Monthly Profit</th>
+                            <td>{{rentalproperty.monthlyProfitAmount}}</td>
+                            <th>Average Monthly Expenses</th>
+                            <td>{{rentalproperty.monthlyExpenseAmount}}</td>
+                        </tr>
+                    </table>
+                </article>
+            </section>
+        </article>
+    </section>
+</section>
