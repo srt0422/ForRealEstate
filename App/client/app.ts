@@ -1,23 +1,26 @@
 /// <reference path="../node_modules/definitely-typed-angular/angular.d.ts"/>
 
-const angular: angular.IAngularStatic = require('angular');
+import angular = require('angular');
 
 import angularMeteor = require('angular-meteor/dist/angular-meteor');
 
 import uiRouter = require('angular-ui-router');
 
+import ngRoute = require('angular-route');
+
 export default (function() {
 
-    return function() {
+    var app;
 
-        var app;
+    return function() {
 
         if (app == null) {
             app = angular.module(
                 "FRE",
                 [
                     angularMeteor,
-                    uiRouter
+                    uiRouter,
+                    ngRoute
                 ]);
         }
 

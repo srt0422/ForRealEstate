@@ -1,3 +1,43 @@
 <section>
-<article>Add a new rental</article>
-</section>
+    <header>Tell me about your rental</header>
+    <article>
+        <section>
+            <form novalidate="true">
+                <fieldset>
+                    <legend>Rental Property Info</legend>
+                    <p>
+                        <label for="status">Rental Status<label/>
+                            <select id="status" ng-model="rentalProperty.status">
+                                <option ng-selected="rentalProperty.status === rentalStatus.toLowerCase()" ng-repeat="rentalStatus in rentalStatuses" ng-value="rentalStatus.toLowerCase()">{{rentalStatus}}</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="monthly_rent">Monthly Rent</label>
+                            <input id="monthly_rent" type="number" ng-model="rentalProperty.monthlyRentAmount">
+                        </p>
+                        <p>
+                            <label for="address">Address</label>
+                            <input ng-model="rentalProperty.address" id="address" type="address" ng-model="rentalProperty.address">
+                        </p>
+                    </fieldset>
+                    <!--rental property info-->
+                    <fieldset>
+                        <legend>Tenants</legend>
+                        <p>
+                            <label for="tenant_count">Number of Tenants</label>
+                            <input ng-model="rentalProperty.tenantCount" type="number" id="tenant_count">
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Maintenance Tasks Todo</legend>
+                        <tasks>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Repair Tasks Todo</legend>
+                        <tasks>
+                    </fieldset>
+                    <button type="button" name="submit" ng-click="submitRentalProperty(rentalProperty)">Save the information for your property</button>
+                </form>
+            </section>
+        </article>
+    </section>

@@ -1,31 +1,46 @@
 <section>
-    <section ng-controller="rentalPropertiesList">
+    <section>
+        <header>Your Rentals</header>
         <section>
-          <a ng-link="/rentalProperty">Add a Rental</a>
+            <a ng-href="/rentalProperty/">Add a Rental</a>
         </section>
         <article class="fre-rental-property" ng-repeat="rentalproperty in rentalproperties">
-            <aside class="fre-rental-property fre-rental-property-thumbnail"></aside>
+            <img class="fre-rental-property fre-rental-property-thumbnail"></img>
             <section class="fre-rental-property fre-rental-property-info">
                 <article>
-                    <table>
-                        <tr>
-                            <th>Total Profit</th>
-                            <td>{{rentalproperty.profitAmount}}</td>
-                            <th>Total Expenses</th>
-                            <td>{{rentalproperty.expenseAmount}}</td>
-                            <th>Total Revenue</th>
-                            <td>{{rentalproperty.revenueAmount}}</td>
-                        </tr>
-                        <tr>
-                            <th>Monthly Rent</th>
-                            <td>{{rentalproperty.monthlyRentPaymentAmount}}</td>
-                            <th>Average Monthly Profit</th>
-                            <td>{{rentalproperty.monthlyProfitAmount}}</td>
-                            <th>Average Monthly Expenses</th>
-                            <td>{{rentalproperty.monthlyExpenseAmount}}</td>
-                        </tr>
-                    </table>
+                    <section>
+                        <table style="text-align: center;">
+                            <tr>
+                                <tr>
+                                    <th>Total Profit</th>
+                                    <th>Total Expenses</th>
+                                    <th>Total Revenue</th>
+                                </tr>
+                                <tr>
+                                    <td>{{$parent.profitAmount(rentalproperty)}}</td>
+                                    <td>{{rentalproperty.expenseAmount}}</td>
+                                    <td>{{rentalproperty.revenueAmount}}</td>
+                                </tr>
+                            </tr>
+                            <tr>
+                                <tr>
+                                    <th>Monthly Rent</th>
+                                    <th>Average Monthly Profit</th>
+                                    <th>Average Monthly Expenses</th>
+                                </tr>
+                                <tr>
+                                    <td>{{rentalproperty.monthlyRentAmount}}</td>
+                                    <td>{{$parent.monthlyProfitAmount(rentalproperty)}}</td>
+                                    <td>{{$parent.monthlyExpenseAmount(rentalproperty)}}</td>
+                                </tr>
+                            </tr>
+                        </table>
+                    </section>
                 </article>
+                <aside>
+                    <button ng-click="onPropertySelected(rentalproperty)">Update</button>
+                    <button ng-click="onPropertyDeleteClicked(rentalproperty)">X</button>
+                </aside>
             </section>
         </article>
     </section>

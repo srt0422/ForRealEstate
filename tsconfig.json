@@ -17,9 +17,10 @@
         "App/server/**/*.ts",
         "App/client/**/*.ts",
         "App/collections/**/*.ts",
-        "typings/**/*.ts",
-        "typings/*.ts",
-        "App/node_modules/definitely-typed-*/**/*.ts"
+        "App/typings/**/*.ts",
+        "App/typings/*.ts",
+        "App/node_modules/definitely-typed-*/**/*.ts",
+        "App/test/**/*.ts"
     ],
     "compileOnSave": false
 }
